@@ -20,11 +20,9 @@ function App() {
 
   const [sidepanelWidth,setsidepanelWidth] = useState(230);
   const [terminalHeight,setterminalHeight] = useState(300);
-
   const [initialPos, setInitialPos] = useState(null);
   const [initialSize, setInitialSize] = useState(250);
   const [unreleased, setunreleased] = useState(true);
-
   const [yinitialPos, setyInitialPos] = useState(null);
   const [yinitialSize, setyInitialSize] = useState(40);
   const [toggler,settoggler] = useState(false);
@@ -36,7 +34,23 @@ function App() {
       nem:"OPEN EDITORS",
       content:[
         {
-          title:"Buttonpanel.js",
+          title:"src",
+          children:[
+
+            {
+              title:"build",
+              children:[
+                {
+                  title:"wow.js"
+                }
+              ]
+
+            },
+            {
+              title:"Ididit.js"
+            }
+
+          ],
         },
         {
           title:"Folder.js",
