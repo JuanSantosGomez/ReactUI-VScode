@@ -6,6 +6,7 @@ import TitleMenu from './components/TitleMenu';
 import Buttonpanel from './components/Buttonpanel';
 import Settingpanel from './components/Settingpanel';
 import Folder from './components/Folder';
+import Bottompanel from './components/Bottompanel';
 
 
 function App() {
@@ -28,6 +29,130 @@ function App() {
   const [yinitialSize, setyInitialSize] = useState(40);
   const [toggler,settoggler] = useState(false);
 
+  const [folders,setFolders] = useState([
+    {
+      isOpen:false,
+      id:0,
+      nem:"OPEN EDITORS",
+      content:[
+        {
+          title:"Buttonpanel.js",
+        },
+        {
+          title:"Folder.js",
+        },
+        {
+          title:"Hresizer.js",
+        },
+        {
+          title:"Settingpanel.js",
+        }
+      ]
+
+    },
+    {
+      isOpen:false,
+      id:1,
+      nem:"New Thing",
+      content:[
+        {
+          title:"Buttonpanel.js",
+        },
+        {
+          title:"Folder.js",
+        },
+        {
+          title:"Hresizer.js",
+        },
+        {
+          title:"Settingpanel.js",
+        },
+        {
+          title:"Folder.js",
+        },
+        {
+          title:"Hresizer.js",
+        },
+        {
+          title:"Settingpanel.js",
+        },
+        {
+          title:"Folder.js",
+        },
+        {
+          title:"Hresizer.js",
+        },
+        {
+          title:"Settingpanel.js",
+        }
+      ]
+
+    },
+  ])
+
+  const [underfolders,setunderFolders] = useState([
+    {
+      isOpen:false,
+      id:0,
+      nem:"OPEN EDITORS",
+      content:[
+        {
+          title:"Buttonpanel.js",
+        },
+        {
+          title:"Folder.js",
+        },
+        {
+          title:"Hresizer.js",
+        },
+        {
+          title:"Settingpanel.js",
+        }
+      ]
+
+    },
+    {
+      isOpen:false,
+      id:1,
+      nem:"New Thing",
+      content:[
+        {
+          title:"Buttonpanel.js",
+        },
+        {
+          title:"Folder.js",
+        },
+        {
+          title:"Hresizer.js",
+        },
+        {
+          title:"Settingpanel.js",
+        },
+        {
+          title:"Folder.js",
+        },
+        {
+          title:"Hresizer.js",
+        },
+        {
+          title:"Settingpanel.js",
+        },
+        {
+          title:"Folder.js",
+        },
+        {
+          title:"Hresizer.js",
+        },
+        {
+          title:"Settingpanel.js",
+        }
+      ]
+
+    },
+  ])
+
+  function setfolds(e){ setFolders(e);}
+  
 
   return (
     <>
@@ -38,12 +163,12 @@ function App() {
             <TitleMenu />
             <div className="h-full flex-grow centered">Title here</div>
             <div className="h-full w-4">Window icons here</div>
-           
+
 
           </div>
           <div className="w-full vh overflow-hidden">
             <div className="flex flex-row h-max-full">
-              <div className="w-2 h-max-full flex flex-col bg-color-700">
+              <div className="w-2 h-max-full flex flex-col bg-accent-001">
                 {/* Side Buttons */}
                 <Buttonpanel />
                 <Settingpanel />
@@ -51,17 +176,17 @@ function App() {
               </div>
               <div className="flex flex-col h-max-full vh bg-color-900" style={{minWidth:sidepanelWidth,maxWidth:sidepanelWidth}} id="sideresized">
                 {/* Side Menu */}
-                <div className="w-full h-20">
+                <div className="w-full h-20 overflow-hidden">
                   Search or Info bar here
                 </div>
                 <div className="flex flex-col w-full overflow-hidden">
-                  <div className="w-full flex-shrink h-min-1">
-                    <Folder />
-                    <Folder />
+                  <div className="w-full flex flex-col flex-shrink overflow-hidden">
+                    {folders.map((fold) => <Folder folder={folders} fold= {fold} onClic={setfolds}/>)}
+                    
                   </div>
                   <div className="w-full flex-grow h-min-1">
-                    <Folder />
-                    <Folder />
+                    {underfolders.map((fold) => <Folder folder={underfolders} fold= {fold} onClic={setunderFolders}/>)}
+                    
 
                     <div className="this-div-gives-space"></div>
                   </div>  
@@ -79,8 +204,8 @@ function App() {
 
                 </div>
                 <div className="flex-grow flex flex-col h-full h-max-full overflow-hidden">
-                  <div className="w-full flex-grow">
-                  App window here
+                  <div className="overflow-auto w-full flex-grow" >
+                    
                   <div className="this-div-gives-space"></div>
 
                   </div>
@@ -96,7 +221,7 @@ function App() {
                 </div>
               </div>
             
-              <div className="try w-1 h-max-full bg-color-600 overflow-hidden">
+              <div className="try w-1 h-max-full bg-color-600 overflow-hidden animated">
                 {/* Right Side Panel */}
                 Detail window here
 
@@ -106,7 +231,7 @@ function App() {
           <div className="w-full flex h-1 bg-color-900 overflow-hidden">
             {/* Footer */}
             
-              <div className="h-full w-4">system icons here</div>
+              <Bottompanel />
               <div className="h-full flex-grow centered">asd</div>
               <div className="h-full flex-shrink">info here</div>
             

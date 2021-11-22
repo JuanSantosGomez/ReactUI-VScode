@@ -1,17 +1,19 @@
-const Folder = () => {
+const Folder = ({folder,fold,onClic}) => {
     return (
-        <div className="w-full">
-            <div className="w-full h-1 bg-color-800 clickable">
-                Open Editors
+        <div className="w-full flex flex-col bg-color-900 h-min-1">
+            
+            <div className="overflow-elli w-full h-1 bg-color-800 clickable" onClick={()=>onClic(folder.map((folds)=> folds.id === fold.id ? { ...folds, isOpen : !folds.isOpen} : folds))}>
+                {fold.nem}
             </div>
-            <div className="w-full h-1 bg-color-900 clickable">
-                Open Editors
-            </div>
-            <div className="w-full h-1 bg-color-900 clickable">
-                Open Editors
-            </div>
-            <div className="w-full h-1 bg-color-900 clickable">
-                Open Editors
+            <div className="overflow-elli w-full overflow-auto">
+            <ul>
+            { fold.isOpen ? fold.content.map((e) =>
+            <li className="w-full h-1 bg-color-900 clickable">
+                {e.title}
+            </li>
+            )
+            : ""}
+            </ul>
             </div>
         </div>
         
