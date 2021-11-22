@@ -18,15 +18,15 @@ function App() {
   const hi = `The standard Lorem Ipsum passage, used since the 1500s
   "Lorem ipsum dolor sit amet, `
 
-  const [sidepanelWidth,setsidepanelWidth] = useState(230);
+  const [sidepanelWidth,setSidepanelWidth] = useState(230);
   const [terminalHeight,setterminalHeight] = useState(300);
   const [initialPos, setInitialPos] = useState(null);
   const [initialSize, setInitialSize] = useState(250);
-  const [unreleased, setunreleased] = useState(true);
-  const [yinitialPos, setyInitialPos] = useState(null);
-  const [yinitialSize, setyInitialSize] = useState(40);
-  const [toggler,settoggler] = useState(false);
-
+  const [unreleased, setUnreleased] = useState(true);
+  const [yInitialPos, setYInitialPos] = useState(null);
+  const [yInitialSize, setYInitialSize] = useState(40);
+  const [toggler,setToggler] = useState(false);
+  
   const [folders,setFolders] = useState([
     {
       isOpen:false,
@@ -207,7 +207,7 @@ function App() {
                 </div>
               </div>
 
-              <Vresizer setsidepanelWidth={setsidepanelWidth} initialSize={initialSize} initialPos={initialPos} unreleased={unreleased} setInitialSize={setInitialSize} setInitialPos={setInitialPos} setunreleased={setunreleased}/>
+              <Vresizer setSidepanelWidth={setSidepanelWidth} initialSize={initialSize} initialPos={initialPos} unreleased={unreleased} setInitialSize={setInitialSize} setInitialPos={setInitialPos} setUnreleased={setUnreleased}/>
 
 
               <div className="flex-grow flex flex-col h-max-full vh overflow-hidden">
@@ -224,7 +224,7 @@ function App() {
 
                   </div>
                   
-                  <Hresizer setterminalHeight={setterminalHeight} initialSize={yinitialSize} initialPos={yinitialPos} toggler={toggler} setInitialSize={setyInitialSize} setInitialPos={setyInitialPos} settoggler={settoggler}/>
+                  <Hresizer setterminalHeight={setterminalHeight} initialSize={yInitialSize} initialPos={yInitialPos} toggler={toggler} setInitialSize={setYInitialSize} setInitialPos={setYInitialPos} setToggler={setToggler}/>
 
                   
                   <div className="w-full flex-grow bg-color-700" style={{minHeight:terminalHeight,maxHeight:terminalHeight}} id="botresized">

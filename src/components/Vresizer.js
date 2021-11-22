@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Vresizer({setsidepanelWidth,initialSize,initialPos,unreleased,setInitialSize,setInitialPos,setunreleased}) {
+function Vresizer({setSidepanelWidth,initialSize,initialPos,unreleased,setInitialSize,setInitialPos,setUnreleased}) {
 
     const initial = (e) => {
       
@@ -19,7 +19,7 @@ function Vresizer({setsidepanelWidth,initialSize,initialPos,unreleased,setInitia
             
             if ((parseInt(`${parseInt(initialSize) + parseInt(e.clientX - initialPos)}`)>170)){
                 resizable.style.display = 'flex';
-                setsidepanelWidth(`${parseInt(initialSize) + parseInt(e.clientX - initialPos)}px`);
+                setSidepanelWidth(`${parseInt(initialSize) + parseInt(e.clientX - initialPos)}px`);
             }
             
             if ( parseInt(`${parseInt(initialSize) + parseInt(e.clientX - initialPos)}`) < 100){
@@ -35,10 +35,10 @@ function Vresizer({setsidepanelWidth,initialSize,initialPos,unreleased,setInitia
     const release = (e) => {
         let resizable = document.getElementById('sideresized');
         if ( parseInt(`${parseInt(initialSize) + parseInt(e.clientX - initialPos)}`) < 100){
-            setsidepanelWidth(`${0}px`);
+            setSidepanelWidth(`${0}px`);
         }
         resizable.style.display = 'flex';
-        setunreleased(true);
+        setUnreleased(true);
     
         
     }

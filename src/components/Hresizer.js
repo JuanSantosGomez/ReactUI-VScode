@@ -3,7 +3,7 @@ import React from 'react'
 
 
 
-function Hresizer({setterminalHeight,initialSize,initialPos,toggler,settoggler,setInitialSize,setInitialPos}) {
+function Hresizer({setterminalHeight,initialSize,initialPos,toggler,setToggler,setInitialSize,setInitialPos}) {
 
     const initial = (e) => {
         let mainpanel = document.getElementById('botresized');
@@ -16,7 +16,7 @@ function Hresizer({setterminalHeight,initialSize,initialPos,toggler,settoggler,s
     }
 
     const resize = (e) => {
-        settoggler(!toggler);
+        setToggler(!toggler);
         setterminalHeight(`${parseInt(initialSize) - parseInt(e.clientY-initialPos)}px`);
    
         
