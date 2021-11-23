@@ -26,7 +26,76 @@ function App() {
   const [yInitialPos, setYInitialPos] = useState(null);
   const [yInitialSize, setYInitialSize] = useState(40);
   const [toggler,setToggler] = useState(false);
-  
+  const [menus,setMenus] = useState([
+    {
+      id:1,
+      title:"File",
+      children:[
+        {
+          title:"New File",
+        },
+        {
+          title:"New Window",
+        },
+        {
+          title:"New File...",
+        },
+        {
+          title:"Open File",
+        },
+        {
+          title:"Open Folder",
+        }
+      ]
+    },
+    {
+      id:2,
+      title:"Edit",
+      children:[
+        {
+          title:"New File",
+        },
+        {
+          title:"New Window",
+        },
+        {
+          title:"New File...",
+        },
+        {
+          title:"Open File",
+        },
+        {
+          title:"Open Folder",
+        },
+        {
+          title:"New File.s..",
+        },
+        {
+          title:"Open Fisle",
+        },
+        {
+          title:"Open Foldgger",
+        }
+      ]
+    },
+    {
+      id:3,
+      title:"Selection",
+    },
+    {
+      id:4,
+      title:"View",
+    },
+    {
+      id:5,
+      title:"Go",
+    },
+    {
+      id:6,
+      title:"Run",
+    }
+  ]
+  );
   const [folders,setFolders] = useState([
     {
       isOpen:false,
@@ -172,9 +241,9 @@ function App() {
     <>
 
       <div className="flex flex-col fullscreen bg-color-800">
-          <div className="w-full flex flex-row h-2 bg-color-800 overflow-hidden">
+          <div className="w-full flex flex-row h-2 bg-color-800 overflow-hidden z-1000">
             {/* Title Menu */}
-            <TitleMenu />
+            <TitleMenu data={menus} setter={setMenus} />
             <div className="h-full flex-grow centered">Title here</div>
             <div className="h-full w-4">Window icons here</div>
 

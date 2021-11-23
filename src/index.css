@@ -72,6 +72,7 @@ span {
 }
 
 div {
+  z-index: 0;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -237,9 +238,18 @@ div {
 }
 .buttontext {
   position: relative;
-  bottom: 25%;
-  padding: 0px 10px;
+  top: 0;
+  padding: 7px 10px;
   text-align: center;
+}
+.top {
+  top: 0;
+}
+.z-1000 {
+  z-index: 1000;
+}
+.fixed {
+  position: fixed;
 }
 ul {
   padding-top: 0;
