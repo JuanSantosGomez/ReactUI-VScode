@@ -33,6 +33,30 @@ function App() {
       children:[
         {
           title:"New File",
+          children:[
+            {title:"Hello",
+              children:[
+                {
+                  title:"world"
+                },
+                {
+                  title:"Other"
+                },
+                {
+                  title:"menu"
+                },
+                {
+                  title:"items"
+                },
+                {
+                  title:"here"
+                },
+                {
+                  title:"wow"
+                }
+              ]
+            }
+          ]
         },
         {
           title:"New Window",

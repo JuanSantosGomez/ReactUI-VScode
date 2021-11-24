@@ -1,9 +1,10 @@
+import Menuitem from "./Menuitem"
+
 const Filemenu = ({data}) => {
     return (
-        <div className="w-3 fixed bg-color-900" style={{top:30}}>
-            {console.log(data.children)}
+        <div className="w-min-3 fixed" style={{top:30}}>
             {data.children.map((e)=>
-            <div className="w-full h-1 clickable">{e.title}</div>
+            <Menuitem data={e} left={0} />
             )}
         </div>
     )
