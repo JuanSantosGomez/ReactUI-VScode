@@ -15,7 +15,7 @@ export class Filemenubutton extends Component {
         this.state={clicked:false};
     
     }
-    setittrue = () => this.setState({clicked:true});
+    setittrue = () => this.setState({clicked:!this.state.clicked});
     
     render() {
        
