@@ -1,4 +1,5 @@
 import './App.css';
+
 import {useState} from 'react'
 import Vresizer from './components/Vresizer';
 import Hresizer from './components/Hresizer';
@@ -9,6 +10,10 @@ import Folder from './components/Folder';
 import Bottompanel from './components/Bottompanel';
 
 
+import './Theme-0.css'
+
+
+
 function App() {
 
   const hello = `The standard Lorem Ipsum passage, used since the 1500s
@@ -17,11 +22,12 @@ function App() {
   Section 1ndignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."`;
   const hi = `The standard Lorem Ipsum passage, used since the 1500s
   "Lorem ipsum dolor sit amet, `
-
+  
   const [sidepanelWidth,setSidepanelWidth] = useState(230);
   const [terminalHeight,setterminalHeight] = useState(300);
   const [initialPos, setInitialPos] = useState(null);
   const [initialSize, setInitialSize] = useState(250);
+  const [theme,setTheme] = useState('green-theme')
   const [unreleased, setUnreleased] = useState(true);
   const [yInitialPos, setYInitialPos] = useState(null);
   const [yInitialSize, setYInitialSize] = useState(40);
@@ -68,7 +74,22 @@ function App() {
           title:"Open File",
         },
         {
-          title:"Open Folder",
+          title:"Preferences",
+          children:[
+            {
+              title:'themes',
+              children:[
+                  {
+                    title:'green-theme',
+                    themer:true,
+                  },
+                  {
+                    title:'basic',
+                    themer:true,
+                  }
+                ]
+            }
+          ]
         }
       ]
     },
@@ -258,18 +279,23 @@ function App() {
     },
   ])
 
+  const changetheme = (e) =>{
+    let tema = theme;
+    setTheme(e)
+  }
+
   function setfolds(e){ setFolders(e);}
   
 
   return (
     <>
 
-      <div className="flex flex-col fullscreen bg-color-800">
+      <div id="app" className={`flex flex-col fullscreen bg-color-800 ${theme}`}>
           <div className="w-full flex flex-row h-2 bg-color-800 overflow-hidden z-1000">
             {/* Title Menu */}
-            <TitleMenu data={menus} setter={setMenus} />
+            <TitleMenu data={menus} setter={setMenus} themechange={changetheme}/>
             <div className="h-full flex-grow centered">Title here</div>
-            <div className="h-full w-4">Window icons here</div>
+            <div className="h-full w-4 clickable" onClick={changetheme}>Window icons here</div>
 
 
           </div>

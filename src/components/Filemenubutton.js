@@ -28,7 +28,7 @@ export class Filemenubutton extends Component {
                     
                 </div>
 
-                {this.props.ee.children&&this.state.clicked? <Filemenu data={this.props.ee}/> :""}
+                {this.props.ee.children&&this.state.clicked? <Filemenu data={this.props.ee} themechange={this.props.themechange}/> :""}
             </div>
         )
     }
