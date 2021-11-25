@@ -50,7 +50,7 @@ function Vresizer({setSidepanelWidth,initialSize,initialPos,unreleased,setInitia
         onDragStart={initial}
         onDrag={resize}
         onDragEnd={release}
-        className="clickable h-max-full w-0 bg-color-900"
+        className="clickable h-max-full w-0 bg-color-900 cursercol"
         >
     
         </div>

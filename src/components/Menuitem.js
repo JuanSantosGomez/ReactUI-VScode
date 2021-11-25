@@ -1,12 +1,21 @@
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { changetheme } from "../actions"
+
 const Menuitem = ({data,left,themechange}) => {
     const [isHovered,setIsHovered] = useState(false)
     const hovering = () => setIsHovered(true)
     const unhovering = () => setIsHovered(false)
-    const seme = (e) => {if (data.themer){themechange(data.title)}}
-    
+    const dispatch = useDispatch()
+    const themo = (e) => {
+
+        if (data.themer){
+            dispatch(e)
+        }
+
+    }
     return (
-        <div className="w-min-3 flex flex-row h-1-5" style={{marginLeft:left,top:0,marginTop:0}} onMouseOver={hovering} onMouseLeave={unhovering} onClick={seme}>
+        <div className="w-min-3 flex flex-row h-1-5" style={{marginLeft:left,top:0,marginTop:0}} onMouseOver={hovering} onMouseLeave={unhovering} onClick={()=>themo(changetheme(data.title))}>
             <div className="w-3 bg-color-900 shadow">
             <div className="w-3 h-full bg-color-900 clickable">
 

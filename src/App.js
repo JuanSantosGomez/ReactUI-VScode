@@ -9,12 +9,13 @@ import Settingpanel from './components/Settingpanel';
 import Folder from './components/Folder';
 import Bottompanel from './components/Bottompanel';
 
-
+import { useSelector } from 'react-redux';
 import './Theme-0.css'
 
 
 
 function App() {
+  const theming = useSelector(state => state.themer);
 
   const hello = `The standard Lorem Ipsum passage, used since the 1500s
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -290,13 +291,12 @@ function App() {
   return (
     <>
 
-      <div id="app" className={`flex flex-col fullscreen bg-color-800 ${theme}`}>
+      <div id="app" className={`flex flex-col fullscreen bg-color-800 ${theming}`}>
           <div className="w-full flex flex-row h-2 bg-color-800 overflow-hidden z-1000">
             {/* Title Menu */}
             <TitleMenu data={menus} setter={setMenus} themechange={changetheme}/>
             <div className="h-full flex-grow centered">Title here</div>
             <div className="h-full w-4 clickable" onClick={changetheme}>Window icons here</div>
-
 
           </div>
           <div className="w-full vh overflow-hidden">
