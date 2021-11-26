@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-size: 10pt;
-  color:var(--textcolor-001);
+  color: var(--textcolor-001);
 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -12,6 +12,16 @@ body {
   background-color: var(--color-800);
   user-select: none;
 }
+.tablecell {
+  padding: 10px 20px;
+}
+
+.card {
+  margin: 0px 20px;
+  background-color: var(--color-700);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.35);
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -21,11 +31,11 @@ span {
   justify-content: center;
 }
 
-.cursercol:hover{
+.cursercol:hover {
   cursor: col-resize;
 }
 
-.curserrow:hover{
+.curserrow:hover {
   cursor: row-resize;
 }
 
@@ -38,15 +48,14 @@ div {
   /* border: 1px solid black; */
   /* overflow: auto; */
 }
-button{
+button {
   border: 0;
   text-align: left;
 }
-button:hover{
+button:hover {
   border-radius: 0;
   border-color: blue;
 }
-
 
 .animated {
   transition-property: min-width, max-width, max-height, min-height, height;
@@ -66,7 +75,7 @@ button:hover{
   min-height: 22px;
   max-height: 22px;
 }
-.h-1-5{
+.h-1-5 {
   min-height: 27px;
   max-height: 27px;
 }
@@ -111,7 +120,7 @@ button:hover{
   min-width: 230px;
   max-width: 230px;
 }
-.w-min-3{
+.w-min-3 {
   min-width: 230px;
 }
 .h-2z {
@@ -119,8 +128,7 @@ button:hover{
 }
 
 .clickable:hover {
-  background-color: rgba(255, 255, 255, 0.212);
-
+  background-color: rgba(0, 109, 252, 0.212);
 }
 .cickable:hover {
   background-color: var(--accent-000);
@@ -184,7 +192,7 @@ button:hover{
 .borderleft {
   border-left: 1px solid rgb(44, 44, 44);
 }
-.z-500{
+.z-500 {
   z-index: 500;
 }
 .h-content {
@@ -206,8 +214,8 @@ button:hover{
   position: absolute;
   display: block;
 }
-.absolute{
-  position:absolute;
+.absolute {
+  position: absolute;
 }
 
 /* Track */
@@ -232,7 +240,7 @@ button:hover{
   margin-top: 0;
   margin-bottom: 0;
 }
-.bold{
+.bold {
   font-weight: 500;
 }
 .menutext {
