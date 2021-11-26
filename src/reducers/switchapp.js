@@ -1,10 +1,10 @@
-const themer = (state = 'basic', action) => {
+const switchapp = (state = 'abs', action) => {
     switch(action.type){
-        case 'THEMECHANGE':
+        case 'SWITCHAPP':
             return action.payload
         default:
             return state
     }
 }
 
-export default themer;
+export default switchapp;

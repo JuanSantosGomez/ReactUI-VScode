@@ -12,6 +12,8 @@
     --accent-000: rgb(48, 75, 134);
     --accent-001: rgb(34, 54, 99);
     --textcolor-001:rgb(172, 172, 172);
+    --textcolor-002:rgb(255, 255, 255);
+
   }
   .basic {
     --color-000: rgb(200, 200, 200);
@@ -32,14 +34,14 @@
     --color-100: rgb(170, 220, 170);
     --color-200: rgb(140, 190, 140);
     --color-300: rgb(110, 160, 110);
-    --color-400: rgb(180, 230, 180);
-    --color-500: rgb(150, 200, 150);
-    --color-600: rgb(120, 170, 120);
-    --color-700: rgb(90, 140, 90);
-    --color-800: rgb(60, 110, 60);
-    --color-900: rgb(30, 80, 30);
-    --accent-000: rgb(48, 175, 134);
-    --accent-001: rgb(34, 154, 99);
+    --color-400: rgb(60, 60, 61);
+    --color-500: rgb(45, 45, 45);
+    --color-600: rgb(51, 51, 51);
+    --color-700: rgb(30, 30, 30);
+    --color-800: rgb(30, 30, 30);
+    --color-900: rgb(37, 37, 38);
+    --accent-000: rgb(0, 122, 204);
+    --accent-001: rgb(51, 51, 51);
   }
   .bg-accent-000 {
     background-color: var(--accent-000);
@@ -62,6 +64,9 @@
   .bg-color-400 {
     background-color: var(--color-400);
   }
+  .bg-text-001{
+    background-color: var(--textcolor-001);
+  }
   .bg-color-500 {
     background-color: var(--color-500);
   }
@@ -76,4 +81,7 @@
   }
   .bg-color-900 {
     background-color: var(--color-900);
+  }
+  .text-002{
+    color:var(--textcolor-002);
   }

@@ -11,11 +11,17 @@ import Bottompanel from './components/Bottompanel';
 
 import { useSelector } from 'react-redux';
 import './Theme-0.css'
+import Applicates from './components/Applicates';
+
+
+
 
 
 
 function App() {
   const theming = useSelector(state => state.themer);
+  const apping = useSelector(state => state.switchapp);
+
 
   const hello = `The standard Lorem Ipsum passage, used since the 1500s
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -39,42 +45,6 @@ function App() {
       title:"File",
       children:[
         {
-          title:"New File",
-          children:[
-            {title:"Hello",
-              children:[
-                {
-                  title:"world"
-                },
-                {
-                  title:"Other"
-                },
-                {
-                  title:"menu"
-                },
-                {
-                  title:"items"
-                },
-                {
-                  title:"here"
-                },
-                {
-                  title:"wow"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          title:"New Window",
-        },
-        {
-          title:"New File...",
-        },
-        {
-          title:"Open File",
-        },
-        {
           title:"Preferences",
           children:[
             {
@@ -94,85 +64,61 @@ function App() {
         }
       ]
     },
-    {
-      id:2,
-      title:"Edit",
-      children:[
-        {
-          title:"New File",
-        },
-        {
-          title:"New Window",
-        },
-        {
-          title:"New File...",
-        },
-        {
-          title:"Open File",
-        },
-        {
-          title:"Open Folder",
-        },
-        {
-          title:"New File.s..",
-        },
-        {
-          title:"Open Fisle",
-        },
-        {
-          title:"Open Foldgger",
-        }
-      ]
-    },
-    {
-      id:3,
-      title:"Selection",
-    },
-    {
-      id:4,
-      title:"View",
-    },
-    {
-      id:5,
-      title:"Go",
-    },
-    {
-      id:6,
-      title:"Run",
-    }
   ]
   );
   const [folders,setFolders] = useState([
     {
       isOpen:false,
       id:0,
-      nem:"OPEN EDITORS",
+      nem:"ADMIN OPTIONS",
       content:[
         {
-          title:"src",
+          title:"Stores",
           children:[
 
             {
-              title:"build",
+              title:"Store 1",
               children:[
                 {
-                  title:"wow.js"
+                  title:"Edit Store",
+                  app:"abs"
+                },
+                {
+                  title:"Monitor Carts",
+                  app:"bas"
+                },
+                {
+                  title:"View Sales"
                 }
               ]
 
             },
             {
-              title:"Ididit.js"
+              title:"Add New Store"
             }
 
           ],
+        }, 
+        {
+          title:"Item Sets",
+          children:[
+            {
+              title:"Item Set 1",
+              children:[
+                {
+                  title:"Edit"
+                },
+                {
+                  title:"Add Inventory"
+                }
+              ]
+            }
+          ]
         },
         {
-          title:"Folder.js",
+          title:"Monitor All Carts",
         },
-        {
-          title:"Hresizer.js",
-        },
+       
         {
           title:"Settingpanel.js",
         }
@@ -182,38 +128,18 @@ function App() {
     {
       isOpen:false,
       id:1,
-      nem:"New Thing",
+      nem:"DATABASE OPTIONS",
       content:[
         {
-          title:"Buttonpanel.js",
+          title:"All Items",
         },
         {
-          title:"Folder.js",
+          title:"Add Item",
         },
         {
-          title:"Hresizer.js",
+          title:"Update",
         },
-        {
-          title:"Settingpanel.js",
-        },
-        {
-          title:"Folder.js",
-        },
-        {
-          title:"Hresizer.js",
-        },
-        {
-          title:"Settingpanel.js",
-        },
-        {
-          title:"Folder.js",
-        },
-        {
-          title:"Hresizer.js",
-        },
-        {
-          title:"Settingpanel.js",
-        }
+       
       ]
 
     },
@@ -292,7 +218,7 @@ function App() {
     <>
 
       <div id="app" className={`flex flex-col fullscreen bg-color-800 ${theming}`}>
-          <div className="w-full flex flex-row h-2 bg-color-800 overflow-hidden z-1000">
+          <div className="w-full flex flex-row h-2 bg-color-400 overflow-hidden z-1000">
             {/* Title Menu */}
             <TitleMenu data={menus} setter={setMenus} themechange={changetheme}/>
             <div className="h-full flex-grow centered">{/*Title here*/}</div>
@@ -331,13 +257,13 @@ function App() {
 
               <div className="flex-grow flex flex-col h-max-full vh overflow-hidden">
                 {/* Main Panel */}
-                <div className="w-full h-3 bg-color-700 overflow-hidden" id="mainpanel">
+                <div className="w-full h-3 bg-color-500 overflow-hidden" id="mainpanel">
                   {/* Main Panel Window Selection */}
-                  
 
                 </div>
                 <div className="flex-grow flex flex-col h-full h-max-full overflow-hidden">
                   <div className="overflow-auto w-full flex-grow" >
+                  <Applicates sami={apping}/>
                     
                   <div className="this-div-gives-space"></div>
 
@@ -346,7 +272,7 @@ function App() {
                   <Hresizer setterminalHeight={setterminalHeight} initialSize={yInitialSize} initialPos={yInitialPos} toggler={toggler} setInitialSize={setYInitialSize} setInitialPos={setYInitialPos} setToggler={setToggler}/>
 
                   
-                  <div className="w-full flex-grow bg-color-700" style={{minHeight:terminalHeight,maxHeight:terminalHeight}} id="botresized">
+                  <div className="borderize w-full flex-grow bg-color-700 " style={{minHeight:terminalHeight,maxHeight:terminalHeight}} id="botresized">
                   App second window here
                   <div className="this-div-gives-space vh"></div>
 
@@ -354,18 +280,18 @@ function App() {
                 </div>
               </div>
             
-              <div className="try w-1 h-max-full bg-color-600 overflow-hidden animated">
+              <div className="try w-1 h-max-full bg-color-700 borderleft overflow-hidden animated">
                 {/* Right Side Panel */}
                 Detail window here
 
               </div>
             </div>
           </div>
-          <div className="w-full flex h-1 bg-color-900 overflow-hidden">
+          <div className="w-full flex h-1 bg-accent-000 text-002 overflow-hidden">
             {/* Footer */}
             
               <Bottompanel />
-              <div className="h-full flex-grow centered">asd</div>
+              <div className="h-full flex-grow centered ">asd</div>
               <div className="h-full flex-shrink">info here</div>
             
 

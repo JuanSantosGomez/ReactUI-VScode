@@ -31,7 +31,7 @@ function Hresizer({setterminalHeight,initialSize,initialPos,toggler,setToggler,s
         onDrag={resize}
         onDragEnd={release}
         
-        className="clickable w-full h-0 bg-color-800 curserrow"
+        className="cickable w-full h-0 bg-color-800 curserrow"
         >
             
         </div>
