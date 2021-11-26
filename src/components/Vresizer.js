@@ -36,6 +36,7 @@ function Vresizer({setSidepanelWidth,initialSize,initialPos,unreleased,setInitia
         let resizable = document.getElementById('sideresized');
         if ( parseInt(`${parseInt(initialSize) + parseInt(e.clientX - initialPos)}`) < 100){
             setSidepanelWidth(`${0}px`);
+
         }
         resizable.style.display = 'flex';
         setUnreleased(true);
@@ -50,7 +51,7 @@ function Vresizer({setSidepanelWidth,initialSize,initialPos,unreleased,setInitia
         onDragStart={initial}
         onDrag={resize}
         onDragEnd={release}
-        className="clickable h-max-full w-0 bg-color-900 cursercol"
+        className="clickable h-max-full w-0 cursercol"
         >
     
         </div>

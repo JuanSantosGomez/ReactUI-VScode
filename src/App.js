@@ -295,8 +295,8 @@ function App() {
           <div className="w-full flex flex-row h-2 bg-color-800 overflow-hidden z-1000">
             {/* Title Menu */}
             <TitleMenu data={menus} setter={setMenus} themechange={changetheme}/>
-            <div className="h-full flex-grow centered">Title here</div>
-            <div className="h-full w-4 clickable" onClick={changetheme}>Window icons here</div>
+            <div className="h-full flex-grow centered">{/*Title here*/}</div>
+            <div className="h-full w-4 clickable" onClick={changetheme}>{/*Window icons here*/}</div>
 
           </div>
           <div className="w-full vh overflow-hidden">
@@ -310,7 +310,7 @@ function App() {
               <div className="flex flex-col h-max-full vh bg-color-900" style={{minWidth:sidepanelWidth,maxWidth:sidepanelWidth}} id="sideresized">
                 {/* Side Menu */}
                 <div className="w-full h-20 overflow-hidden">
-                  Search or Info bar here
+                  {/*Search or Info bar here*/}
                 </div>
                 <div className="flex flex-col w-full overflow-hidden">
                   <div className="w-full flex flex-col flex-shrink overflow-hidden">
@@ -333,7 +333,7 @@ function App() {
                 {/* Main Panel */}
                 <div className="w-full h-3 bg-color-700 overflow-hidden" id="mainpanel">
                   {/* Main Panel Window Selection */}
-                  Tab titles here
+                  
 
                 </div>
                 <div className="flex-grow flex flex-col h-full h-max-full overflow-hidden">

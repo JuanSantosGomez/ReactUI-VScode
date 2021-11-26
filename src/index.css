@@ -38,6 +38,18 @@ div {
   /* border: 1px solid black; */
   /* overflow: auto; */
 }
+button{
+  border: 0;
+  text-align: left;
+}
+button:focus{
+  border:0;
+  border-radius: 0;
+}
+button:focus-within{
+  border:0;
+  border-radius: 0;
+}
 .animated {
   transition-property: min-width, max-width, max-height, min-height, height;
   transition-duration: 300ms;
@@ -161,6 +173,15 @@ div {
 .shadow {
   box-shadow: 0 2px 8px rgb(0 0 0 / 0.2);
 }
+.shadow-2 {
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.35);
+}
+.borderize {
+  border-top: 1px solid rgb(44, 44, 44);
+}
+.z-500{
+  z-index: 500;
+}
 .h-content {
   min-height: max-content;
   height: max-content;
@@ -205,6 +226,16 @@ div {
   padding-bottom: 0;
   margin-top: 0;
   margin-bottom: 0;
+}
+.bold{
+  font-weight: 500;
+}
+.menutext {
+  padding: 3px 15px;
+  color: var(--textcolor-001);
+}
+.dirtext {
+  color: var(--textcolor-001);
 }
 .buttontext {
   position: relative;
